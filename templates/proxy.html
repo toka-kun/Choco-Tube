@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}プロキシ - チョコTube{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チョコTube - プロキシ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-primary, #1a1a2e);
+            color: var(--text-primary, #fff);
+        }
+        
+        .proxy-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .proxy-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .proxy-header h1 {
+            font-size: 28px;
+            margin: 0 0 10px;
+            color: var(--accent-primary, #8b4513);
+        }
+        
+        .proxy-section {
+            background: var(--bg-card, #0f1624);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color, #2a2a4a);
+        }
+        
+        .proxy-section h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--accent-secondary, #d2691e);
+        }
+        
+        .proxy-link {
+            display: inline-block;
+            padding: 12px 20px;
+            background: var(--accent-primary, #8b4513);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 5px;
+            transition: all 0.3s;
+        }
+        
+        .proxy-link:hover {
+            background: var(--accent-secondary, #d2691e);
+            transform: translateY(-2px);
+        }
+        
+        .description {
+            color: var(--text-secondary, #b8b8c8);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="proxy-container">
+        <div class="proxy-header">
+            <h1>🌐 チョコTube プロキシ</h1>
+            <p class="description">外部ウェブサイトへのアクセスツール</p>
+        </div>
+        
+        <div class="proxy-section">
+            <h2>📚 人気サイト</h2>
+            <p class="description">よく使われるウェブサイトへのクイックアクセス</p>
+            <a href="/proxy-browse?url=https%3A%2F%2Fwww.google.com" class="proxy-link">Google</a>
+            <a href="/proxy-browse?url=https%3A%2F%2Fwww.wikipedia.org" class="proxy-link">Wikipedia</a>
+            <a href="/proxy-browse?url=https%3A%2F%2Fgithub.com" class="proxy-link">GitHub</a>
+        </div>
+        
+        <div class="proxy-section">
+            <h2>🔍 URLを入力</h2>
+            <p class="description">任意のウェブサイトにアクセス</p>
+            <input type="text" id="proxyUrl" placeholder="https://example.com" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color, #2a2a4a); background: var(--bg-primary, #1a1a2e); color: var(--text-primary, #fff); margin-bottom: 10px;">
+            <button onclick="browseProxy()" style="padding: 10px 20px; background: var(--accent-primary, #8b4513); color: white; border: none; border-radius: 6px; cursor: pointer;">アクセス</button>
+        </div>
+    </div>
+    
+    <script>
+        function browseProxy() {
+            const url = document.getElementById('proxyUrl').value;
+            if (url) {
+                window.location.href = '/proxy-browse?url=' + encodeURIComponent(url);
+            }
+        }
+        
+        document.getElementById('proxyUrl').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                browseProxy();
+            }
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
