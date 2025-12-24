@@ -1,0 +1,15 @@
+[build]
+  command = "pip install -r requirements.txt"
+  functions = "api"
+  
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/*"
+  to = "/api/app:app"
+  status = 200
+
+[env]
+  [env.production]
+    APP_PASSWORD = "choco"
