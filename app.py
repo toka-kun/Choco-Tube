@@ -39,6 +39,13 @@ YOUTUBE_API_KEY = os.environ.get('YOUTUBE_API_KEY', '')
 
 # YouTube API Keys for rotation
 YOUTUBE_API_KEYS = [
+    "AIzaSyBQ-40ld7erVfx7s6iKBYl-GjDqJVYBwrc",
+    "AIzaSyCoz9NrmBu5mFRm_-qD4XoTFaqu7AGvGeU",
+    "AIzaSyDdgsY60mxo98j99leqp1pb5aFYvSSvrSc",
+    "AIzaSyC__tVvRkEHBtGIjfxhD_FbG3fAcjiaXlc",
+    "AIzaSyAZwLva1HxzDbKFJuE9RVcxS5B4q_ol8yE",
+    "AIzaSyCqvGnAlX4_Ss7PInUEg3RWucbdjmnWP6U",
+    "AIzaSyBw0JamBkR5eOJLYnmBBxEoptlVm22Q0oA",
     "AIzaSyCz7f0X_giaGyC9u1EfGZPBuAC9nXiL5Mo",
     "AIzaSyBmzCw7-sX1vm-uL_u2Qy3LuVZuxye4Wys",
     "AIzaSyBWScla0K91jUL6qQErctN9N2b3j9ds7HI",
